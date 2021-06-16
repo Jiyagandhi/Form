@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Form</title>
+	<script type="text/javascript">
+		function abc(){
+			var a=document.getElementById("Username").value;
+			var b=document.getElementById("Email").value;
+			var at=b.indexOf("@");
+			var dot=b.lastIndexOf(".");
+			var c=document.getElementById("Phone").value;
+			var d=document.getElementById("Address").value;
+			var e=document.getElementById("Post").value;
+			var f=document.getElementById("Country").value;
+			if (a.length<1){
+				document.getElementById("url").innerHTML="PLEASE ENTER YOUR USERNAME";
+		 }
+		 if (b.length<1) {
+		 	document.getElementById("urq").innerHTML="PLEASE ENTER YOUR EMAIL";
+		 }
+		 if(at<1 || (dot-at<2)){
+		 	document.getElementById("urj").innerHTML="PLEASE ENTER CORRECT EMAIL ID";
+		 }
+		 if(c.length<1){
+		    document.getElementById("urr").innerHTML="PLEASE ENTER YOUR Phone No.";  
+		 }
+		 if(d.length<1){
+		    document.getElementById("uru").innerHTML="PLEASE ENTER YOUR ADDRESS";
+		}
+		 if(e.length<1){
+		    document.getElementById("urt").innerHTML="PLEASE ENTER YOUR POST CODE";
+		}
+		 if(f.length<1){
+		    document.getElementById("urv").innerHTML="PLEASE ENTER YOUR COUNTRY NAME";
+		}
+		 if (a.length<1 || b.length<1 || at<1 || (dot-at<2) || c.length<1 || d.length<1 || e.length<1 || f.length<1){
+		 	return false;
+		 }
+		 return true;
+		}
+	</script>
+</head>
+<body>
+	<table>
+<form method="post" name="form" onsubmit="return(abc());">
+Username
+    <input type="text" name="Username" id="Username">
+    <span id="url"></span>
+    <br>
+Email
+    <input type="text" name="Email" id="Email">
+    <span id="urq"></span>
+    <span id="urj"></span>
+    <br>
+Phone
+    <input type="text" name="Phone" id="Phone">
+    <span id="urr"></span>
+    <br>
+Address
+<textarea name="Address" id="Address" cols="60" rows="4"></textarea>
+    <span id="uru"></span>
+    <br>
+Post code
+    <input type="text" name="Post code" id="Post">
+    <span id="urt"></span>
+    <br>
+Country
+    <input type="text" name="Country" id="Country">
+    <span id="urv"></span>
+    <br>
+<button>BUY IT !</button>
+</form>
+</table>
+</body>
+</html>
